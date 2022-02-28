@@ -1,0 +1,34 @@
+<div class="card mt-50 mb-50">
+  <div class="col d-flex"><span class="text-muted" id="orderno">order #546924</span></div>
+  <div class="gap">
+      <div class="col-1 d-flex mx-auto"> </div>
+  </div>
+  <div class="title mx-auto">
+      This is Your Order Details.It will be delivered within 2 days.keep shopping.
+    </div>
+  <div class="main"> <span id="sub-title">
+          <p><b>Payment Summary</b></p>
+      </span>
+      <div class="row row-main" *ngFor="let productOrder of productOrders">
+          <div class="col-3"> <img class="img-fluid" [src]="productOrder.imagePath"> </div>
+          <div class="col-6">
+              <div class="row d-flex">
+                  <p><b>{{productOrder.productName}}</b></p>
+              </div>
+              <div class="row d-flex">
+                  <p class="text-muted">{{productOrder.productDescription.split('|')[0]}}</p>
+              </div>
+          </div>
+          <div class="col-3 d-flex justify-content-end">
+              <p><b>{{productOrder.order.totalAmount | currency:"INR"}}</b></p>
+          </div>
+
+      </div>
+      <hr>
+      <div class="total">
+          <div class="row">
+              <div class="col"> <b> Total:</b> </div><div class="col d-flex justify-content-end" > <b>{{ displayTotalAmount() | currency:"INR"}}</b> </div>
+
+
+  </div>
+</div>
